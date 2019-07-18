@@ -1,0 +1,253 @@
+@import 'reset';
+@import 'grid';
+@import 'function';
+@import 'layout';
+
+.clearfix {
+    @include clearfix;
+}
+
+.content {
+    padding: 50px 40px;
+    @include mobile480(){
+        padding: 50px 10px;
+    }
+    p {
+        font-size: $font-subtitle-m;
+        color: $color-dark;
+        line-height: 1.5;
+        display: inline;
+        margin-right: 70px;
+        @include pad(){
+            margin-right: 20px;
+        }
+        i {
+            margin-right: 15px;
+        }
+    }
+
+    .cart-pay {
+        float: right;
+
+        li {
+            float: left;
+            padding: 4px 12px;
+
+            a {
+                font-size: $font-content;
+                color: $color-dark;
+                i{
+                    font-size: 27px;  
+                    line-height: 15px;                  
+                }
+            }
+        }
+    }
+}
+
+.form-searchbar {
+    display: inline;
+    @include mobile480(){
+        display: block;
+        margin-bottom: 20px;
+    }
+    input[type="text"] {
+        width: 400px;
+        height: 28px;
+        border: 2px solid $color-dark;
+        margin-right: -4px;
+        vertical-align: bottom;
+        background: #efe9e7;
+        @include pad(){
+            width: 300px;
+        }
+        @include mobile480(){
+            width: 88%;    
+        }
+    }
+
+    button[type="submit"] {
+        width: 32px;
+        height: 34px;
+        color: $color-light;
+        background: $color-dark;
+        border: none;
+        font-size: 19px;
+        cursor: pointer;
+        vertical-align: bottom;
+    }
+}
+
+.bill{
+    border-right: 1px solid $color-dark;
+}
+
+.menu-flex{
+    display: flex;
+    padding-top: 25px;
+    @include mobile480(){
+        flex-direction: column;
+    }
+}
+
+.sideMenu{
+    width: 21%;
+    margin-right: 4%;
+    @include padpro(){
+        width: 16%;
+    }
+    @include pad(){
+        width: 25%;
+        margin-right: 5%;
+    }
+    @include mobile480(){
+        width: 95%;
+        margin:0 auto;
+        margin-bottom: 20px;
+    }
+    li{
+        padding: 0 5px; 
+        line-height: 2;
+        border-bottom: 1px solid $color-dark;
+    }
+    li:hover{
+        background: $color-dark;
+        a{
+            color: $color-light;
+        }
+    }
+    a{
+        font-size: $font-content;
+        color: $color-dark;
+        display: block;
+    }
+
+}
+
+.foodMenu{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include padpro(){
+        width: 80%;
+    }
+    @include pad(){
+        width:70%;
+    }
+    @include mobile480(){
+        width: 90%;
+        margin: 0 auto;
+    }
+    li{
+        position:relative;
+        width: 220px;
+        height: 280px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+        @include mobile480(){
+            width: 100%;
+            margin-right: 0;
+        }
+        .favorite{
+            position:absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 24px;
+            color: $color-light;
+        }
+        img{
+            width: 100%;
+            height: 120px;
+            margin-bottom: 10px;
+        }
+        h3{
+            font-size: $font-price;
+            color: $color-dark;
+            text-align: center;
+            line-height: 1.5;
+        }
+        h4{
+            font-size: $font-en;
+            color: $color-dark;
+            text-align: center;
+            line-height: 1.5;
+        }
+        hr{
+            width: 50%;
+            border: 1px solid $color-dark;
+            background: $color-dark;
+            margin-bottom: 15px;
+        }
+        p{
+            display: block;
+            margin: 0;
+            margin-bottom: 15px;
+            font-size: $font-price;
+            color: $color-dark;
+            font-style: italic;
+            text-align: center;
+        }
+        .add-cart{
+            display: block;
+            color: #FF5E45;
+            border: 2px solid #FF5E45;
+            border-radius: 3px;
+            text-align: center;
+            font-size: $font-content;
+            padding: 3px 0;
+            width: 90%;
+            margin-left: 5%;
+            i{
+                margin-right: 5px;
+            }
+        }
+    }
+    li:hover{
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        border-color: $color-dark;
+        transition: all .2s ease-in-out;
+    }
+}
+
+// 緞帶語法
+.ribbon-wrap{
+    width: 106px;
+    height: 108px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    right: -5px;
+}
+.ribbon {
+    position: relative;
+    left: -11px;
+    top: 26px;
+    width: 148px;
+    background-color: #00CC99;
+    color: $color-light;
+    padding: 5px 0;
+    text-align: center;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    &:before{
+        content: "";
+        border-top: 4px solid #795548;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+    }
+    &:after{
+        content: "";
+        border-top: 4px solid #795548;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        position: absolute;
+        bottom: -4px;
+        right: 0;
+    }
+}
+// 緞帶語法結束
